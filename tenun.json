@@ -1,0 +1,10 @@
+{
+  "nama": "json",
+  "versi": "0.1.0",
+  "deskripsi": "Bangun & baca JSON untuk Tenun (objek, larik, escape, baca field).",
+  "lisensi": "MIT",
+  "penulis": "TenunLang",
+  "berkas": "src/json.tenun",
+  "kataKunci": ["json", "api", "web", "serialisasi"],
+  "butuh": {}
+}
