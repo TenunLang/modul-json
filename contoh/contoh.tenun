@@ -1,5 +1,4 @@
 impor "json";
-
 biar j: teks = json_objek(["nama", "kota"], ["Budi", "Jakarta"]);
 cetak(j);
 cetak(json_ambil(j, "nama"));

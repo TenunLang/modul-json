@@ -1,0 +1,10 @@
+impor "../src/json.tenun";
+
+biar j: teks = json_objek(["nama", "kota"], ["Budi", "Jakarta"]);
+tegasSama(json_ambil(j, "nama"), "Budi", "json_ambil ambil field nama");
+tegasSama(json_ambil(j, "kota"), "Jakarta", "json_ambil ambil field kota");
+
+biar arr: teks = json_larik(["a", "b", "c"]);
+tegasSama(arr, "[\"a\",\"b\",\"c\"]", "json_larik bangun larik");
+
+tegasSama(json_str("a\"b"), "\"a\\\"b\"", "json_str escape kutip");

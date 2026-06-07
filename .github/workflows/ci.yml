@@ -20,3 +20,5 @@ jobs:
           printf 'impor "json";\n' > cek.tenun
           "$HOME/.tenun/bin/tenun" run cek.tenun
           echo "modul json valid"
+      - name: Uji unit
+        run: "$HOME/.tenun/bin/tenun" check .

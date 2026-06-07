@@ -1,8 +1,3 @@
-// Modul JSON untuk Tenun — bangun & baca JSON.
-// Pembacaan field top-level memakai builtin inti (jsonTeks/jsonAngka/jsonBool).
-// Pembangunan memakai builtin teks (ganti).
-
-// Escape teks untuk string JSON.
 fungsi json_escape(s: teks): teks {
     biar r: teks = ganti(s, "\\", "\\\\");
     r = ganti(r, "\"", "\\\"");
@@ -12,32 +7,31 @@ fungsi json_escape(s: teks): teks {
     kembali r;
 }
 
-// Bungkus jadi string JSON ber-kutip.
 fungsi json_str(s: teks): teks {
     kembali "\"" + json_escape(s) + "\"";
 }
 
-// Bangun objek dari larik kunci + larik nilai (semua nilai teks).
 fungsi json_objek(kunci: []teks, nilai: []teks): teks {
     biar r: teks = "{";
     untuk i dari 0 sampai panjang(kunci) {
-        kalau i > 0 { r = r + ","; }
+        kalau i > 0 {
+            r = r + ",";
+        }
         r = r + json_str(kunci[i]) + ":" + json_str(nilai[i]);
     }
     kembali r + "}";
 }
 
-// Bangun larik dari larik teks.
 fungsi json_larik(nilai: []teks): teks {
     biar r: teks = "[";
     untuk i dari 0 sampai panjang(nilai) {
-        kalau i > 0 { r = r + ","; }
+        kalau i > 0 {
+            r = r + ",";
+        }
         r = r + json_str(nilai[i]);
     }
     kembali r + "]";
 }
-
-// ---- Baca (delegasi ke builtin inti) ----
 
 fungsi json_ambil(j: teks, kunci: teks): teks {
     kembali jsonTeks(j, kunci);
